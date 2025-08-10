@@ -1,0 +1,20 @@
+# Virtual envs and Python caches
+.venv/
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+
+# Logs and temp
+*.log
+server_*.log
+gradio.log
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Model artifacts (optional, uncomment if you don't want to track)
+# results/
+# intent_ckpt/
+
