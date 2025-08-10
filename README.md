@@ -10,7 +10,7 @@ This repository contains an end-to-end intent-aware chatbot with short- and long
 
 ### Repository Structure
 - `intent_classifier.py`: Loads tokenizer and sequence classification model. Supports `INTENT_MODEL_PATH` (local) and `INTENT_MODEL_ID` (Hugging Face hub id). Falls back to base BERT if none provided.
-- `context_manager.py`: Keeps recent messages within a token budget and stores long-term memory using MiniLM embeddings and cosine similarity.
+- `context_manager.py`: Short-term token window + long-term retrieval via SentenceTransformer embeddings and NumPy cosine similarity (moved off FAISS due to segfaults).
 - `response_generator.py`: FLAN-T5 based generator with a concise few-shot prompt.
 - `app.py`: CLI orchestrator for local chat.
 - `server.py`: FastAPI app serving a minimal HTML page and `/chat` endpoint.
